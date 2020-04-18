@@ -17,3 +17,6 @@ DECRYPTION:
 $ serpent1.py -m dec -k 'c0ffee' -s 'decrypt this hex ciphertext'
 $ serpent1.py --mode dec --key 'c0ffee' --string 'decrypt this hex ciphertext'
 ```
+There is also serpent class
+Initialize object with hexadecimal key with length as a multiple of 16 and less than 256
+use encryptBlock and decryptBlock for only 128-bit binary data
