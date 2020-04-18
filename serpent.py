@@ -8,12 +8,14 @@ import re
 
 
 class Serpent():
+#     key should be hexadecimal and multiple of 16 upto 256
     def __init__(self, key):
         self.round_count = 32
         self.block_size = 128
         self.key_size = 128
         self.keys = self.generateRoundKeys(key, self.round_count, self.key_size)
-
+        
+#     block should be 128-bit binary data
     def encryptBlock(self, block):
         assert len(block) == self.block_size, f'Length of input block {len(block)} doesnot match block size {self.block_size} for encryption'
 
@@ -23,6 +25,7 @@ class Serpent():
         cipher = self.FP(BHati)
         return cipher
 
+#      block should be 128-bit binary data
     def decryptBlock(self, block):
         assert len(block) == self.block_size, f'Length of input block {len(block)} doesnot match block size {self.block_size} for decryption'
 
